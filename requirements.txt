@@ -15,9 +15,9 @@ importlib-metadata==4.8.3
 importlib-resources==5.4.0
 Kivy==2.0.0
 
-kivy-deps.glew==0.3.0
-kivy-deps.sdl2==0.3.1
-Kivy-Garden==0.1.4
+# kivy-deps.glew==0.3.0
+# kivy-deps.sdl2==0.3.1
+# Kivy-Garden==0.1.4
 Markdown==3.3.7
 numpy==1.19.5
 openpyxl==3.0.9
