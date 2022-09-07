@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% block title %} IT & Programming {% endblock title %}
+{% block side %}
+  
+    {% for post in posts %}
+        {% if  forloop.counter <= 5 %}
+                <li><a href="{% url 'post_detail' post.slug  %}">{{post.tytul}}</a></li>
+        {% endif %}
+        
+    {% endfor %}
+{% endblock side %}
+{% block secondside %}
+{% for post in posts %}
+
+    <li><a href="#">{{post.kategorie}}</a></li>
+{% endfor %}
+        <!-- <li class="cat-item cat-item-16"><a href="#" name ='python'>Python</a></li>
+        <li class="cat-item cat-item-41"><a href="#"name = 'technologie'>Technologie</a></li>
+        <li class="cat-item cat-item-26"><a href="#" name ='biznes'>Biznes</a></li>
+        <li class="cat-item cat-item-26"><a href="#" name ='polityka'>Polityka</a></li>
+        <li class="cat-item cat-item-26"><a href="#" name ='nauka'>Nauka Programowania</a></li>
+        <li class="cat-item cat-item-26"><a href="#" name ='narzedzia'>Narzędzia</a></li>
+        <li class="cat-item cat-item-26"><a href="#"name ='inne'>Inne</a></li> -->
+
+{% endblock secondside %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left mx-auto">
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.tytul }}</h2>
+                    <p class="card-text text-muted h6">{{ post.autor }} | {{ post.data_utworzenia|date:'D, d N H:i:s ' }} </p>
+                    <p class="card-text">{{post.tresc|slice:":200" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

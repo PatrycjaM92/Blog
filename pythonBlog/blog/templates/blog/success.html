@@ -1,0 +1,23 @@
+{% extends 'blog/home.html' %}
+{% block side %}
+  
+    {% for post in posts %}
+        {% if  forloop.counter <= 5 %}
+                <li><a href="{% url 'post_detail' post.slug  %}">{{post.tytul}}</a></li>
+        {% endif %}
+        
+    {% endfor %}
+{% endblock side %}
+<!-- {% block secondside %}
+      
+        <li class="cat-item cat-item-16"><a href="https://kamil.kwapisz.pl/category/bazy-danych/">bazy danych</a></li>
+        <li class="cat-item cat-item-41"><a href="https://kamil.kwapisz.pl/category/blockchain/">blockchain</a></li>
+        <li class="cat-item cat-item-26"><a href="https://kamil.kwapisz.pl/category/inne/">inne</a></li>
+{% endblock secondside %}             -->
+           
+{% block content %}
+<p style="text-align:justify;">    
+   Wiadomość została wysłana
+
+</p>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'blog/home.html' %}
+{% block side %}
+  
+    {% for post in posts %}
+        {% if  forloop.counter <= 5 %}
+                <li><a href="{% url 'post_detail' post.slug  %}">{{post.tytul}}</a></li>
+        {% endif %}
+        
+    {% endfor %}
+{% endblock side %}
+{% block secondside %}
+      
+{% endblock secondside %}            
+           
+
+
+
+
+
+{% block content %}
+<center>
+<div class="d-flex justify-content-center">
+  <div class="row">
+    <div class="col-md-8 card mb-5  mt-4 mx-auto" style="width: 25rem;"" >
+      <div class="card-body">
+        <h5 class="card-title">Skontaktuj się ze mną!</h5>
+        <p class="card-text" style="font-size: 16pt;">E-mail: marekpat92@gmail.com</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+  
+          <input type="submit" value="Wyślij">
+        </form> 
+
+        
+      </div>
+    </div>
+  
+  </div>
+</div>
+</center>
+{% endblock content %}
+

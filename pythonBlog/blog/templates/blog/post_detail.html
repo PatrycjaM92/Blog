@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+{% block side %}
+  
+    {% for post in posts %}
+        {% if  forloop.counter <= 5 %}
+                <li><a href="{% url 'post_detail' post.slug  %}">{{post.tytul}}</a></li>
+        {% endif %}
+        
+    {% endfor %}
+{% endblock side %}
+{% block secondside %}
+      
+        <li class="cat-item cat-item-16"><a href="https://kamil.kwapisz.pl/category/bazy-danych/">bazy danych</a></li>
+        <li class="cat-item cat-item-41"><a href="https://kamil.kwapisz.pl/category/blockchain/">blockchain</a></li>
+        <li class="cat-item cat-item-26"><a href="https://kamil.kwapisz.pl/category/inne/">inne</a></li>
+{% endblock secondside %}
+
+
+{% block content %}
+<center>
+<div class="d-flex justify-content-center">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 mx-auto" >
+      <div class="card-body">
+        <h1>{{post.tytul}}</h1>
+        <p class=" text-muted">{{ post.autor }} | {{ post.data_utworzenia }}</p>
+        <p class="card-text ">{{ post.tresc | safe}}</p>
+      </div>
+    </div>
+  
+  </div>
+</div>
+</center>
+{% endblock content %}
+

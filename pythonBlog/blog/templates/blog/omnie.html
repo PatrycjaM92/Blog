@@ -1,0 +1,26 @@
+{% extends 'blog/home.html' %}
+{% block side %}
+  
+    {% for post in posts %}
+        {% if  forloop.counter <= 5 %}
+                <li><a href="{% url 'post_detail' post.slug  %}">{{post.tytul}}</a></li>
+        {% endif %}
+        
+    {% endfor %}
+{% endblock side %}
+<!-- {% block secondside %}
+      
+        
+{% endblock secondside %}              -->
+           
+{% block content %}
+<p style="text-align:justify;">    
+    Cześć, Mam na imię Patrycja studiuję Informatykę. Pasjonuje mnie programowanie w języku Python. 
+    Bliskie są mi zagadnienia związane z Data Science, Machine Learning, a także Web Development.<br><br>
+    Pythona odkrywam na nowo każdego dnia. I choć relacje z nim nie raz bywały trudne, to miłość do tego języka
+    pozostała niezmienna.<br><br>
+    Blog powstał z myślą o doskonaleniu umiejętności związanych z programowaniem, a także nabywaniu nowych 
+    doświadczeń zarówno w programowaniu jak i szeroko rozumianej technologii.
+
+</p>
+{% endblock content %}
