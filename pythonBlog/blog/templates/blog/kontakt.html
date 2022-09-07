@@ -9,7 +9,10 @@
     {% endfor %}
 {% endblock side %}
 {% block secondside %}
-      
+{% for kategoria in kategorie %}
+    <li class="cat-item cat-item-16"><a href="{% url 'kategorie' kategoria.id %}" name ='python'>{{kategoria.kategoria}}</a></li>
+{% endfor %}
+        
 {% endblock secondside %}            
            
 

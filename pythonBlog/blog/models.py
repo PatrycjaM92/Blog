@@ -1,14 +1,17 @@
+import imp
+import re
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 
 # Create your models here.
-KATEGORIE = (('PYTHON','Python'),
-            ('BIZNES','Biznes'),
-            ('TECHNOLOGIE','Technologie'),
-            ('POLITYKA','Polityka'),
-            ('NAUKA PROGRAMOWANIA','Nauka Programowania'),
-            ('NARZĘDZIA','Narzędzia'),
-            ('INNE','Inne'))
+class Kategorie(models.Model):
+    kategoria = models.CharField(max_length=150)
+    def __str__(self):
+        return self.kategoria
+    def get_absolute_url(self):
+        return reverse("home")
+
 class Profile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
@@ -31,7 +34,7 @@ class Post (models.Model):
     data_publikacji = models.DateTimeField(blank=True,null=True)
     czy_opublikowane = models.BooleanField(default=False)
     img = models.ImageField(upload_to='pictures',blank=True,null=True)
-    kategorie = models.CharField(max_length=20,choices=KATEGORIE,default='INNE')
+    kategoria = models.ForeignKey(Kategorie,on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['-data_publikacji']

@@ -39,8 +39,8 @@
                 <a class="nav-link " href="{% url 'kontakt' %}">Kontakt</a>
               </li>
             </ul>
-            <form class="d-flex" style ="margin-left: auto;" role="search">
-                <input class="form-control me-2" type="search" placeholder="Szukaj" aria-label="Search">
+            <form class="d-flex" style ="margin-left: auto;" role="search" action="{% url 'post_list' %}">
+                <input class="form-control me-2" type="search" placeholder="Szukaj" aria-label="Search" name="search">
                 <button class="btn btn-light" type="submit">Szukaj</button>
               </form>
 
@@ -109,12 +109,12 @@
       <div class="footer-social-icons text-center">
         <h4 class="_14 " ></h4>
         <ul class="social-icons">
-            <li><a href="https://www.facebook.com/patrycja.mx.75" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
-            <li><a href="https://twitter.com/Patrycja_vvv" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/patrycja.mx.75" target="blank" class="social-icon"> <i class="fa fa-facebook" ></i></a></li>
+            <li><a href="https://twitter.com/Patrycja_vvv" target="blank" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
             <!-- <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li> -->
-            <li><a href="https://www.youtube.com/channel/UCXX-LnF64_DcoMJuVxG472g" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCXX-LnF64_DcoMJuVxG472g" target="blank" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
             <li><a href="" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://github.com/PatrycjaM92" class="social-icon"> <i class="fa fa-github"></i></a></li>
+            <li><a href="https://github.com/PatrycjaM92" target="blank" class="social-icon"> <i class="fa fa-github"></i></a></li>
         </ul>
     </div>
 

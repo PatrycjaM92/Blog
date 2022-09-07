@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post,Profile
+from .models import Post,Profile,Kategorie
 
 # Register your models here.
 
@@ -11,5 +11,5 @@ class AdminPost(admin.ModelAdmin):
         
         
     
-
+admin.site.register(Kategorie)
 admin.site.register(Profile)

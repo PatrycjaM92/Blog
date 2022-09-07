@@ -10,20 +10,11 @@
     {% endfor %}
 {% endblock side %}
 {% block secondside %}
-{% for post in posts %}
-
-    <li><a href="{% url 'post_detail' post.slug  %}">{{post.KATEGORIE}}</a></li>
-{% endif %}
-
+{% for kategoria in kategorie %}
+    <li class="cat-item cat-item-16"><a href="{% url 'kategorie' kategoria.id %}" name ='python'>{{kategoria.kategoria}}</a></li>
 {% endfor %}
-      
-        <!-- <li class="cat-item cat-item-16"><a href="#" name ='python'>Python</a></li>
-        <li class="cat-item cat-item-41"><a href="#"name = 'technologie'>Technologie</a></li>
-        <li class="cat-item cat-item-26"><a href="#" name ='biznes'>Biznes</a></li>
-        <li class="cat-item cat-item-26"><a href="#" name ='polityka'>Polityka</a></li>
-        <li class="cat-item cat-item-26"><a href="#" name ='nauka'>Nauka Programowania</a></li>
-        <li class="cat-item cat-item-26"><a href="#" name ='narzedzia'>Narzędzia</a></li>
-        <li class="cat-item cat-item-26"><a href="#"name ='inne'>Inne</a></li> -->
+        
+     
 
 {% endblock secondside %}
 
