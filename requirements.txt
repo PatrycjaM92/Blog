@@ -14,7 +14,7 @@ idna==3.3
 importlib-metadata==4.8.3
 importlib-resources==5.4.0
 Kivy==2.0.0
-kivy-deps.angle==0.3.0
+
 kivy-deps.glew==0.3.0
 kivy-deps.sdl2==0.3.1
 Kivy-Garden==0.1.4
